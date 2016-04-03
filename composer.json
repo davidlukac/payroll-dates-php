@@ -1,0 +1,23 @@
+{
+  "name": "davidlukac/payroll-dates",
+  "description": "Utility for calculating salary-related dates.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Lukac",
+      "email": "david.lukac@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpspec/phpspec": "2.5.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "davidlukac\\": "src/"
+    }
+  }
+}
