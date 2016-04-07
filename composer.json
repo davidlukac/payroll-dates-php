@@ -9,15 +9,20 @@
       "email": "david.lukac@gmail.com"
     }
   ],
+  "require": {
+    "icanboogie/datetime": "1.2.0",
+    "icanboogie/common": "v1.3.0"
+  },
   "require-dev": {
-    "phpspec/phpspec": "2.5.0"
+    "phpspec/phpspec": "2.5.0",
+    "behat/behat": "v3.1.0"
   },
   "config": {
     "bin-dir": "bin"
   },
   "autoload": {
     "psr-4": {
-      "davidlukac\\": "src/"
+      "davidlukac\\payroll_dates\\": "src/davidlukac/payroll_dates"
     }
   }
 }
