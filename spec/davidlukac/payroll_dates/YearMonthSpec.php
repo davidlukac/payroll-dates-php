@@ -2,21 +2,12 @@
 
 namespace spec\davidlukac\payroll_dates;
 
-use davidlukac\payroll_dates\PayrollDatesApp;
+use spec\davidlukac\payroll_dates\PayrollDatesAppBehaviour as AppBehaviour;
 use ICanBoogie\DateTime;
-use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class YearMonthSpec extends ObjectBehavior
+class YearMonthSpec extends AppBehaviour
 {
-    /* @var $appContext PayrollDatesApp */
-    private $_appContext;
-
-    public function __construct()
-    {
-        $this->_appContext = PayrollDatesApp::getInstance();
-    }
-
     function it_should_be_constructed_with_year_month()
     {
         $this->beConstructedWith(2016, 4);
@@ -33,5 +24,11 @@ class YearMonthSpec extends ObjectBehavior
         $this->getDateTime()->shouldBeLike(
             new DateTime("{$year}-{$month}-01 01:01:01", $this->_appContext->getTimeZone())
         );
+    }
+
+    function it_should_print_year_month()
+    {
+        $this->beConstructedWith(2016, 4);
+        $this->__toString()->shouldBeLike("2016-04");
     }
 }

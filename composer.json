@@ -24,5 +24,10 @@
     "psr-4": {
       "davidlukac\\payroll_dates\\": "src/davidlukac/payroll_dates"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\davidlukac\\payroll_dates\\": "spec/davidlukac/payroll_dates"
+    }
   }
 }

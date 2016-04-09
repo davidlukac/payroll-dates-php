@@ -4,8 +4,8 @@ Feature:
   In order to pay out salaries according to business rules
 
 Scenario Outline: Calculating salary date
-  Given I provide a specific calendar month
-  Then Correct salary date is calculated
+  Given I provide a specific "<calendar_month>"
+  Then Correct <salary_date> is calculated
   Examples:
-  | Calendar month  | Salary date |
+  | calendar_month  | salary_date |
   | 2016-04         | 2016-04-29  |

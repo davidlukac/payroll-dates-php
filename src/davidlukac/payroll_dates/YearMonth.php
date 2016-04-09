@@ -18,7 +18,7 @@ class YearMonth
      */
     public function __construct($year, $month)
     {
-        $this->_dateTime = new iDateTime("{$year}-{$month}-01 01:01:01", @date_default_timezone_get());
+        $this->_dateTime = new iDateTime("{$year}-{$month}-01 01:01:01", date_default_timezone_get());
     }
 
     /**
@@ -44,5 +44,15 @@ class YearMonth
     public function getDateTime()
     {
         return $this->_dateTime;
+    }
+
+    /**
+     * Return formatted year-month.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getYear() . '-' . sprintf('%02d', $this->getMonth());
     }
 }
