@@ -2,7 +2,6 @@
 <?php
 
 use davidlukac\payroll_dates\CalculateCommand;
-use davidlukac\payroll_dates\PayrollDatesApp;
 use Symfony\Component\Console\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';

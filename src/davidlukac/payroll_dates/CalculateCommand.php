@@ -9,26 +9,34 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CalculateCommand extends Command
 {
-    private $_argCalculateName = "calculate";
+    private $_cmdCalculateName = "calculate";
+    private $_argFileName = 'file';
 
     protected function configure()
     {
-        $this->setName($this->_argCalculateName);
+        $this->setName($this->_cmdCalculateName);
         $this->setDescription("Calculates salary and bonus dates for the next 12 months.");
-        $this->addArgument('file', InputArgument::REQUIRED, "Output file.");
+        $this->addArgument($this->_argFileName, InputArgument::REQUIRED, "Output file (required).");
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $app = PayrollDatesApp::getInstance();
         $result = $app->calculateForNextYear();
-        $outputFileName = $input->getArgument($this->_argCalculateName);
+        $outputFileName = $input->getArgument($this->_argFileName);
 
         if (empty($outputFileName)) {
             throw new \InvalidArgumentException("Filename was not set.");
         }
 
         // @todo Write result to file.
+
+        if ($output->getVerbosity() > OutputInterface::VERBOSITY_NORMAL) {
+            foreach ($result as $month) {
+                printf($month . "\n");
+            }
+        }
+
     }
 
 }

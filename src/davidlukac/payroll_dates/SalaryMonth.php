@@ -130,4 +130,17 @@ class SalaryMonth
         return $lastDay;
     }
 
+    /**
+     * Nicely formatted string with month, salary and bonus date information.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $s = 'For month ' . $this->_yearMonth . ', salary is paid on '
+            . $this->getSalaryDate()->format_as_date() . ' and bonuses are paid on '
+            . $this->getBonusDate()->as_date . '.';
+        return $s;
+    }
+
 }
