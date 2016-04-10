@@ -22,6 +22,20 @@ class YearMonth
     }
 
     /**
+     * An alternative constructor that takes a \DateTime as argument.
+     *
+     * @param \DateTime $dt
+     *
+     * @return \davidlukac\payroll_dates\YearMonth
+     */
+    public static function constructWithDate(\DateTime $dt)
+    {
+        $instance = new self($dt->format('Y'), $dt->format('m'));
+        $instance->_dateTime = new iDateTime($dt->format('Y-m') . '-01 00:00:00', date_default_timezone_get());
+        return $instance;
+    }
+
+    /**
      * Year as a number, e.g. 2012.
      *
      * @return int
