@@ -29,14 +29,15 @@ class CalculateCommand extends Command
             throw new \InvalidArgumentException("Filename was not set.");
         }
 
-        // @todo Write result to file.
-
+        // Write result to console.
         if ($output->getVerbosity() > OutputInterface::VERBOSITY_NORMAL) {
             foreach ($result as $month) {
                 printf($month . "\n");
             }
         }
 
+        // Write result to the file.
+        CsvWriter::write($result, $outputFileName);
     }
 
 }

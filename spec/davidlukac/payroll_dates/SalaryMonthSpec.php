@@ -36,4 +36,13 @@ class SalaryMonthSpec extends PayrollDatesAppBehaviour
             new iDateTime("2016-05-18 00:00:00", $this->_appContext->getTimeZone())
         );
     }
+
+    function it_should_provide_calculated_values_as_array()
+    {
+        $this->beConstructedWith($this->_yearMonth);
+        $this->getCsvFields()->shouldContain('2016-04');
+        $this->getCsvFields()->shouldContain('April');
+        $this->getCsvFields()->shouldContain('2016-04-29');
+        $this->getCsvFields()->shouldContain('2016-05-18');
+    }
 }

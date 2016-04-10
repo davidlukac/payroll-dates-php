@@ -143,4 +143,20 @@ class SalaryMonth
         return $s;
     }
 
+    public static function getCsvHeader()
+    {
+        return ['Month', 'MonthName', 'SalaryDate', 'BonusDate'];
+    }
+
+    public function getCsvFields()
+    {
+        $ar = [
+            $this->_yearMonth->__toString(),
+            $this->_yearMonth->getDateTime()->format('F'),
+            $this->getSalaryDate()->as_date,
+            $this->getBonusDate()->as_date
+        ];
+        return $ar;
+    }
+
 }
