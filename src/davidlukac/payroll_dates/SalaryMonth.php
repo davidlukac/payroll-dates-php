@@ -71,7 +71,7 @@ class SalaryMonth
         if ($dayOfWeek === 6) {
             $subtractDays = new \DateInterval("P1D");
         } elseif ($dayOfWeek === 7) {
-            $subtractDays = new \DateInterval("P1D");
+            $subtractDays = new \DateInterval("P2D");
         } else {
             $subtractDays = new \DateInterval("P0D");
         }

@@ -15,7 +15,8 @@
   },
   "require-dev": {
     "phpspec/phpspec": "2.5.0",
-    "behat/behat": "v3.1.0"
+    "behat/behat": "v3.1.0",
+    "phpunit/phpunit": "^5.3.1"
   },
   "config": {
     "bin-dir": "bin"
@@ -27,7 +28,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "spec\\davidlukac\\payroll_dates\\": "spec/davidlukac/payroll_dates"
+      "spec\\davidlukac\\payroll_dates\\": "spec/davidlukac/payroll_dates",
+      "davidlukac\\payroll_dates\\test\\": "tests/davidlukac/payroll_dates"
     }
   }
 }

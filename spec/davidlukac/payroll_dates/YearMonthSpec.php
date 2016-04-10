@@ -22,7 +22,7 @@ class YearMonthSpec extends AppBehaviour
         $month = 4;
         $this->beConstructedWith($year, $month);
         $this->getDateTime()->shouldBeLike(
-            new DateTime("{$year}-{$month}-01 01:01:01", $this->_appContext->getTimeZone())
+            new DateTime("{$year}-{$month}-01 00:00:00", $this->_appContext->getTimeZone())
         );
     }
 
