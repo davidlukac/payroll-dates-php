@@ -17,6 +17,7 @@
   },
   "require-dev": {
     "phpspec/phpspec": "2.5.0",
+    "phpspec/nyan-formatters": "^1.0",
     "behat/behat": "v3.1.0",
     "phpunit/phpunit": "^5.3.1"
   },
