@@ -1,0 +1,38 @@
+{
+  "name": "davidlukac/payroll-dates",
+  "description": "Utility for calculating salary-related dates.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Lukac",
+      "email": "david.lukac@gmail.com"
+    }
+  ],
+  "require": {
+    "icanboogie/datetime": "1.2.0",
+    "icanboogie/common": "v1.3.0",
+    "symfony/console": "^3.0",
+    "symfony/filesystem": "^3.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "2.5.0",
+    "phpspec/nyan-formatters": "^1.0",
+    "behat/behat": "v3.1.0",
+    "phpunit/phpunit": "^5.3.1"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "davidlukac\\payroll_dates\\": "src/davidlukac/payroll_dates"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\davidlukac\\payroll_dates\\": "spec/davidlukac/payroll_dates",
+      "davidlukac\\payroll_dates\\test\\": "tests/davidlukac/payroll_dates"
+    }
+  }
+}
