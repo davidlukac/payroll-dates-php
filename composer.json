@@ -12,7 +12,8 @@
   "require": {
     "icanboogie/datetime": "1.2.0",
     "icanboogie/common": "v1.3.0",
-    "symfony/console": "^3.0"
+    "symfony/console": "^3.0",
+    "symfony/filesystem": "^3.0"
   },
   "require-dev": {
     "phpspec/phpspec": "2.5.0",

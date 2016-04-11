@@ -3,6 +3,7 @@
 namespace davidlukac\payroll_dates;
 
 use ICanBoogie\DateTime as iDateTime;
+use Symfony\Component\Console\Application;
 
 class PayrollDatesApp
 {
@@ -11,6 +12,8 @@ class PayrollDatesApp
     private $_appTimeZoneID = "Europe/London";
     /* @var $_appTimeZone \DateTimeZone */
     private $_appTimeZone;
+    /* @var $_consoleApp Application */
+    private $_consoleApp;
 
     /**
      * PayrollDatesApp constructor - application setup.
@@ -31,9 +34,21 @@ class PayrollDatesApp
         return new PayrollDatesApp();
     }
 
+    public function getConsoleApp()
+    {
+        if (false === isset($this->_consoleApp)) {
+            $consoleApp = new Application();
+            $consoleApp->setName("Payroll Dates Calculator");
+            $consoleApp->setVersion("v0.1.0");
+            $consoleApp->add(new CalculateCommand());
+            $this->_consoleApp = $consoleApp;
+        }
+        return $this->_consoleApp;
+    }
+
     /**
      * Retrieves salary dates for the next year from "now".
-     * 
+     *
      * @return array of SalaryMonth objects.
      */
     public function calculateForNextYear()

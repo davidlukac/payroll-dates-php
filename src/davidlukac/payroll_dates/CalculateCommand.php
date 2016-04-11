@@ -9,12 +9,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CalculateCommand extends Command
 {
-    private $_cmdCalculateName = "calculate";
+    const CALCULATE = 'calculate';
     private $_argFileName = 'file';
 
     protected function configure()
     {
-        $this->setName($this->_cmdCalculateName);
+        $this->setName(static::CALCULATE);
         $this->setDescription("Calculates salary and bonus dates for the next 12 months.");
         $this->addArgument($this->_argFileName, InputArgument::REQUIRED, "Output file (required).");
     }
