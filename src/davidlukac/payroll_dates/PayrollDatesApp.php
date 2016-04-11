@@ -17,6 +17,10 @@ use Symfony\Component\Console\Application;
 class PayrollDatesApp
 {
 
+    // Application properties.
+    const VERSION = 'v1.0.0-20160411';
+    const NAME = 'Payroll Dates Calculator';
+
     // @todo Make timezone configurable.
     private $_appTimeZoneID = "Europe/London";
     /* @var $_appTimeZone \DateTimeZone */
@@ -52,8 +56,8 @@ class PayrollDatesApp
     {
         if (false === isset($this->_consoleApp)) {
             $consoleApp = new Application();
-            $consoleApp->setName("Payroll Dates Calculator");
-            $consoleApp->setVersion("v0.1.0");
+            $consoleApp->setName(PayrollDatesApp::NAME);
+            $consoleApp->setVersion(PayrollDatesApp::VERSION);
             $consoleApp->add(new CalculateCommand());
             $this->_consoleApp = $consoleApp;
         }
