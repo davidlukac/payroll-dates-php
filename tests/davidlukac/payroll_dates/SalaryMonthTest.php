@@ -2,7 +2,6 @@
 
 namespace davidlukac\payroll_dates\tests;
 
-
 use davidlukac\payroll_dates\SalaryMonth;
 use davidlukac\payroll_dates\YearMonth;
 use ICanBoogie\DateTime as iDateTime;

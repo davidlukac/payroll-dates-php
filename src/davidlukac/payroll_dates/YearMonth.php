@@ -4,6 +4,15 @@ namespace davidlukac\payroll_dates;
 
 use ICanBoogie\DateTime as iDateTime;
 
+/**
+ * Class YearMonth helps to represent months without specific date in mind, e.g. 2016-04.
+ *
+ * It can be constructed in two ways:
+ * 1) Providing the year and month as integers.
+ * 2) From DateTime instance.
+ *
+ * @package davidlukac\payroll_dates
+ */
 class YearMonth
 {
     /* @var $dateTime iDateTime */
@@ -12,6 +21,8 @@ class YearMonth
     /**
      * YearMonth constructor, using year and month numbers to create
      * the instance; e.g. 2016, 04.
+     *
+     * @todo Add input validation - atm. not needed as all instances are created within the application.
      *
      * @param $year int
      * @param $month int
@@ -23,6 +34,8 @@ class YearMonth
 
     /**
      * An alternative constructor that takes a \DateTime as argument.
+     *
+     * @todo Add input validation - atm. not needed as all instances are created within the application.
      *
      * @param \DateTime $dt
      *

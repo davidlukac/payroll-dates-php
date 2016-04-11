@@ -4,6 +4,11 @@ namespace davidlukac\payroll_dates;
 
 use ICanBoogie\DateTime as iDateTime;
 
+/**
+ * Class DateUtils provides useful helper functions for work with DateTime objects.
+ *
+ * @package davidlukac\payroll_dates
+ */
 class DateUtils
 {
     /**

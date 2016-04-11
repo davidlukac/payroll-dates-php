@@ -2,13 +2,22 @@
 
 namespace davidlukac\payroll_dates;
 
-use ICanBoogie\DateTime as iDateTime;
 use Symfony\Component\Console\Application;
 
+/**
+ * Class PayrollDatesApp - actual application class.
+ *
+ * Contains application setup and functions that invoke core functionality:
+ * - calculateForNextYear() - calculates salary and bonus dates for the next twelve months.
+ *
+ * Entry point for the application is 'getInstance()' function.
+ *
+ * @package davidlukac\payroll_dates
+ */
 class PayrollDatesApp
 {
 
-    // @todo Make timezone more configurable.
+    // @todo Make timezone configurable.
     private $_appTimeZoneID = "Europe/London";
     /* @var $_appTimeZone \DateTimeZone */
     private $_appTimeZone;
@@ -34,6 +43,11 @@ class PayrollDatesApp
         return new PayrollDatesApp();
     }
 
+    /**
+     * Provides console application representation.
+     *
+     * @return \Symfony\Component\Console\Application
+     */
     public function getConsoleApp()
     {
         if (false === isset($this->_consoleApp)) {

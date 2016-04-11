@@ -4,6 +4,12 @@ namespace davidlukac\payroll_dates;
 
 use ICanBoogie\DateTime as iDateTime;
 
+/**
+ * Class SalaryMonth is the core class of the application. It holds year-month representation of a month and its
+ * salary and bonus dates.
+ *
+ * @package davidlukac\payroll_dates
+ */
 class SalaryMonth
 {
     /* @var $_yearMonth YearMonth */
@@ -115,6 +121,8 @@ class SalaryMonth
     /**
      * Helper function to calculate last day of month for given YearMonth.
      *
+     * @todo Refactor to DateUtils as reusable functionality.
+     *
      * @param \davidlukac\payroll_dates\YearMonth $month
      *
      * @return \ICanBoogie\DateTime
@@ -143,11 +151,25 @@ class SalaryMonth
         return $s;
     }
 
+    /**
+     * Helper function that provides header of the output CSV file as array of strings - names of the columns.
+     *
+     * @return array
+     */
     public static function getCsvHeader()
     {
         return ['Month', 'MonthName', 'SalaryDate', 'BonusDate'];
     }
 
+    /**
+     * Helper function providing class data as string in an array as follows:
+     * - year and month in format 'Y-m', e.g. 2016-04,
+     * - name of the month as long string, e.g. April,
+     * - salary date as string in format 'Y-m-d', e.g. 2016-04-29,
+     * - bonus date as string in format 'Y-m-d', e.g. 2016-05-18.
+     *
+     * @return array
+     */
     public function getCsvFields()
     {
         $ar = [
