@@ -14,7 +14,7 @@ use Symfony\Component\Console\Application;
  *
  * @package davidlukac\payroll_dates
  */
-class PayrollDatesApp
+class PayrollDatesApp extends Application
 {
 
     // Application properties.
@@ -30,11 +30,15 @@ class PayrollDatesApp
 
     /**
      * PayrollDatesApp constructor - application setup.
+     *
+     * @inheritdoc
      */
-    private function __construct()
+    public function __construct($name = self::NAME, $version = self::VERSION)
     {
+        parent::__construct($name, $version);
         $this->_appTimeZone = new \DateTimeZone($this->_appTimeZoneID);
         date_default_timezone_set($this->_appTimeZone->getName());
+        $this->add(new CalculateCommand());
     }
 
     /**
@@ -45,23 +49,6 @@ class PayrollDatesApp
     public static function getInstance()
     {
         return new PayrollDatesApp();
-    }
-
-    /**
-     * Provides console application representation.
-     *
-     * @return \Symfony\Component\Console\Application
-     */
-    public function getConsoleApp()
-    {
-        if (false === isset($this->_consoleApp)) {
-            $consoleApp = new Application();
-            $consoleApp->setName(PayrollDatesApp::NAME);
-            $consoleApp->setVersion(PayrollDatesApp::VERSION);
-            $consoleApp->add(new CalculateCommand());
-            $this->_consoleApp = $consoleApp;
-        }
-        return $this->_consoleApp;
     }
 
     /**
