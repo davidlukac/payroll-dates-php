@@ -44,9 +44,9 @@ class CalculateCommand extends Command
             throw new \InvalidArgumentException("Filename was not set.");
         }
 
-        // Get application instance.
-        $app = PayrollDatesApp::getInstance();
         // Run calculation and save the result.
+        /* @var $app PayrollDatesApp */
+        $app = $this->getApplication();
         $result = $app->calculateForNextYear();
 
         // Write result to console if verbose level was set.

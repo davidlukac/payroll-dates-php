@@ -75,7 +75,7 @@ class PayrollDatesFeatureContext implements Context, SnippetAcceptingContext
     {
         $this->_fileName = $fileName;
         $output = new NullOutput();
-        $command = $this->_app->getConsoleApp()->find(CalculateCommand::CALCULATE);
+        $command = $this->_app->find(CalculateCommand::CALCULATE);
         $arguments = array(
             'command' => CalculateCommand::CALCULATE,
             'file' => $fileName,
