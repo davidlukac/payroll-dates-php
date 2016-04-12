@@ -18,15 +18,13 @@ class PayrollDatesApp extends Application
 {
 
     // Application properties.
-    const VERSION = 'v1.0.0-20160411';
+    const VERSION = 'v1.0.1';
     const NAME = 'Payroll Dates Calculator';
 
     // @todo Make timezone configurable.
     private $_appTimeZoneID = "Europe/London";
     /* @var $_appTimeZone \DateTimeZone */
     private $_appTimeZone;
-    /* @var $_consoleApp Application */
-    private $_consoleApp;
 
     /**
      * PayrollDatesApp constructor - application setup.
